@@ -1,0 +1,11 @@
+[Unit]
+Description=SSH tunnel service for {{ item.name }}
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/autossh -M 0 -N -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L {{ item.listen_ip }}:{{ item.listen_port }}:{{ item.ssh_ip }}:{{ item.ssh_port }} {{ item.ssh_local }}
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

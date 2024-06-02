@@ -1,0 +1,14 @@
+tunnels: 
+  - name: tunnel1
+    listen_port: '2222'
+    listen_ip: '0.0.0.0'
+    ssh_ip: '172.16.0.1'
+    ssh_port: '22'
+    ssh_local: 'root@localhost'
+
+  - name: tunnel2
+    listen_port: '3333'
+    listen_ip: '0.0.0.0'
+    ssh_ip: '10.10.10.10'
+    ssh_port: '22'
+    ssh_local: 'root@localhost'
